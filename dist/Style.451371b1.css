@@ -1,0 +1,98 @@
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+body {
+  background-color: rgb(255, 255, 241);
+}
+.Temprature {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.Desplayed {
+  text-align: center;
+}
+.ResultView {
+  visibility: visible;
+}
+.Desplayed :nth-child(even) {
+  background-color: rgb(190, 233, 233);
+}
+.Desplayed :nth-child(odd) {
+  background-color: rgba(193, 222, 231, 0.322);
+}
+.NotFound :nth-child(even) {
+  background-color: rgb(190, 233, 233);
+}
+.NotFound :nth-child(odd) {
+  background-color: rgba(193, 222, 231, 0.322);
+}
+.NotFound :nth-child(n) {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.Title {
+  background-color: lightskyblue;
+  text-align: center;
+  color: whitesmoke;
+  font-family: "Courier New", Courier, monospace;
+  padding-top: 100px;
+  margin-top: 0px;
+}
+.Title:hover {
+  background-color: rgb(70, 183, 253);
+}
+
+h2,
+h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.Button {
+  background-color: rgb(124, 231, 245);
+  border-radius: 10px;
+  color: white;
+}
+.LandingButton {
+  display: block;
+  align-items: center;
+  text-align: center;
+  color: whitesmoke;
+  width: 100%;
+  margin-top: 5%;
+  padding-top: 5%;
+  margin-bottom: 10%;
+  height: 50px;
+  text-decoration: none;
+}
+.LandingButton:hover {
+  background-color: rgb(70, 183, 253);
+}
+div :link {
+  text-decoration: none;
+}
+.LandingList :nth-child(even) {
+  background-color: rgb(139, 216, 216);
+}
+
+.LandingList :nth-child(odd) {
+  background-color: rgba(44, 206, 255, 0.322);
+}
+
+.Button:hover {
+  background-color: rgb(38, 216, 240);
+}
+form {
+  font-family: cursive;
+  margin-bottom: 20px;
+}
+input {
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+
+/*# sourceMappingURL=/Style.451371b1.css.map */
