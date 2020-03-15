@@ -4,6 +4,9 @@
 body {
   background-color: rgb(255, 255, 241);
 }
+img {
+  width: 70%;
+}
 .Temprature {
   text-align: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -92,4 +95,8 @@ form {
 input {
   border-radius: 10px;
   margin-left: 10px;
+}
+#loading {
+  text-align: center;
+  text-decoration: wavy;
 }
