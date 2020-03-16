@@ -32533,7 +32533,7 @@ class News extends _react.default.Component {
       j.then(json => {
         console.log(json);
         this.setState({
-          feed: json.results[0]
+          feed: json.results.slice(0, 5)
         });
       }); //
     }).catch(error => {
@@ -32546,24 +32546,34 @@ class News extends _react.default.Component {
   render() {
     console.log(`in render ${this.state.feed}`);
 
+    var finalRender = _react.default.createElement("div", null);
+
     if (this.state.feed == null) {
-      return _react.default.createElement("div", null);
+      finalRender = _react.default.createElement("div", null);
     } else {
       console.log("123");
       console.log(this.state.feed);
-      return _react.default.createElement("div", null, _react.default.createElement("h1", {
-        style: {
-          textAlign: "center",
-          marginTop: "20px"
-        }
-      }, "Today's top story"), _react.default.createElement("div", {
-        className: "Desplayed"
-      }, _react.default.createElement("h1", null, this.state.feed.title), _react.default.createElement("div", null, _react.default.createElement("img", {
-        src: this.state.feed.multimedia[0].url,
-        alt: this.state.feed.multimedia[0].caption
-      })), _react.default.createElement("p", null, this.state.feed.abstract)));
-    } //return outis;
+      finalRender = this.state.feed.map(e => {
+        return _react.default.createElement("div", null, _react.default.createElement("div", {
+          className: "Desplayed"
+        }, _react.default.createElement("h1", null, e.title), _react.default.createElement("div", null, _react.default.createElement("img", {
+          src: e.multimedia[0].url,
+          alt: e.multimedia[0].caption
+        })), _react.default.createElement("p", null, e.abstract)));
+      });
+    }
 
+    return _react.default.createElement("div", null, _react.default.createElement("h1", {
+      style: {
+        textAlign: "center",
+        marginTop: "20px"
+      }
+    }, "Today's top stories"), _react.default.createElement("div", {
+      style: {
+        overflow: "scroll",
+        height: "500px"
+      }
+    }, finalRender));
   }
 
 }
@@ -32762,7 +32772,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54045" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52758" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
