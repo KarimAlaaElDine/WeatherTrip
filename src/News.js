@@ -1,14 +1,12 @@
 import React from "react";
 import { render } from "react-dom/cjs/react-dom.production.min";
-
+import { store } from "./Store";
 class News extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      feed: null
-    };
   }
   UNSAFE_componentWillMount() {
+    var prop = this.props;
     const apiKey = `o2BGfRs5ksCxBw1WzxItDGBpwFuMMR0L`;
     const API = `https://api.nytimes.com/svc/topstories/v2/world.json?api-key=${apiKey}`;
     const promise = fetch(API);
@@ -16,8 +14,10 @@ class News extends React.Component {
       .then(response => {
         let j = response.json();
         j.then(json => {
-          console.log(json);
-          this.setState({ feed: json.results.slice(0, 5) });
+          let f = json.results.slice(0, 5);
+          console.log(f);
+          this.props.refeed(f);
+          console.log(this.props);
         });
         //
       })
@@ -28,21 +28,30 @@ class News extends React.Component {
   componentDidMount() {}
 
   render() {
-    console.log(`in render ${this.state.feed}`);
+    console.log(this.props);
+
+    console.log(`in render ${this.props.feed}`);
     var finalRender = <div></div>;
-    if (this.state.feed == null) {
+    if (this.props.feed == null) {
       finalRender = <div></div>;
     } else {
       console.log("123");
-      console.log(this.state.feed);
-      finalRender = this.state.feed.map(e => {
+      console.log(this.props.feed);
+      finalRender = this.props.feed.map(e => {
+        let Image = e.multimedia ? (
+          <img src={e.multimedia[0].url} alt={e.multimedia[0].caption} />
+        ) : (
+          <img
+            src="https://image.shutterstock.com/image-photo/business-newspaper-isolated-on-white-260nw-1272343108.jpg"
+            alt="Not found"
+          />
+        );
         return (
+          // eslint-disable-next-line react/jsx-key
           <div>
             <div className="Desplayed">
               <h1>{e.title}</h1>
-              <div>
-                <img src={e.multimedia[0].url} alt={e.multimedia[0].caption} />
-              </div>
+              <div>{Image}</div>
               <p>{e.abstract}</p>
             </div>
           </div>

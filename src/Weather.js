@@ -1,5 +1,5 @@
 import React from "react";
-import News from "./News";
+import { NewsContainer } from "./Store";
 
 const Weather = props => {
   console.log(props.info);
@@ -18,7 +18,7 @@ const Weather = props => {
             {Math.round(props.info.main.temp - 273.15)}°C
           </h3>
         </div>
-        <News />
+        <NewsContainer />
       </div>
     );
   } else {
