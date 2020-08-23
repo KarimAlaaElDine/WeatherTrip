@@ -59,11 +59,32 @@ class News extends React.Component {
       });
     }
     return (
-      <div>
-        <h1 style={{ textAlign: "center", marginTop: "20px" }}>
+      <div
+        style={{
+          backgroundColor: "rgba(193, 222, 231, 0.322)",
+          position: "absolute"
+        }}
+      >
+        <h1
+          style={{
+            textAlign: "center",
+            marginTop: "20%"
+          }}
+        >
           Today's top stories
         </h1>
-        <div style={{ overflow: "scroll", height: "500px" }}>{finalRender}</div>
+        <div
+          style={{
+            overflow: "scroll",
+            height: "500px",
+            padding: "20px",
+            paddingTop: "0px",
+            marginTop: "0px",
+            position: "relative"
+          }}
+        >
+          {finalRender}
+        </div>
       </div>
     );
   }
