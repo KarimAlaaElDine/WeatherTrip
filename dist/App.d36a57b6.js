@@ -34648,7 +34648,7 @@ const Weather = props => {
     if (props.start) {
       return _react.default.createElement("h1", {
         id: "loading"
-      }, "Loading....");
+      }, "Loading");
     }
 
     return _react.default.createElement("div", {
@@ -35087,9 +35087,10 @@ class News extends _react.default.Component {
           alt: "Not found"
         });
         return (// eslint-disable-next-line react/jsx-key
-          _react.default.createElement("div", null, _react.default.createElement("div", {
-            className: "Desplayed"
-          }, _react.default.createElement("h1", null, e.title), _react.default.createElement("div", null, Image), _react.default.createElement("p", null, e.abstract)))
+          // eslint-disable-next-line react/jsx-key
+          _react.default.createElement("div", {
+            className: "NewsItem"
+          }, _react.default.createElement("h1", null, e.title), _react.default.createElement("div", null, Image), _react.default.createElement("p", null, e.abstract))
         );
       });
     }
@@ -35296,7 +35297,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52584" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56879" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

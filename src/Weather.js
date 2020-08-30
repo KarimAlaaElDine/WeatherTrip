@@ -23,7 +23,7 @@ const Weather = props => {
     );
   } else {
     if (props.start) {
-      return <h1 id="loading">Loading....</h1>;
+      return <h1 id="loading">Loading</h1>;
     }
 
     return (

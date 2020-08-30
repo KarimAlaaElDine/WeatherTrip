@@ -48,12 +48,12 @@ class News extends React.Component {
         );
         return (
           // eslint-disable-next-line react/jsx-key
-          <div>
-            <div className="Desplayed">
-              <h1>{e.title}</h1>
-              <div>{Image}</div>
-              <p>{e.abstract}</p>
-            </div>
+
+          // eslint-disable-next-line react/jsx-key
+          <div className="NewsItem">
+            <h1>{e.title}</h1>
+            <div>{Image}</div>
+            <p>{e.abstract}</p>
           </div>
         );
       });

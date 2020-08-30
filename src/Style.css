@@ -46,6 +46,7 @@ img {
 }
 .Title:hover {
   background-color: rgb(70, 183, 253);
+  padding-top: 110px;
 }
 
 h2,
@@ -59,6 +60,16 @@ h3 {
   border-radius: 10px;
   color: white;
 }
+@keyframes fade-in {
+  0% {
+    margin-top: 30%;
+    opacity: 0%;
+  }
+  100% {
+    margin-top: 5%;
+    opacity: 100%;
+  }
+}
 .LandingButton {
   display: block;
   align-items: center;
@@ -70,9 +81,12 @@ h3 {
   margin-bottom: 10%;
   height: 50px;
   text-decoration: none;
+  animation-name: fade-in;
+  animation-duration: 3s;
 }
 .LandingButton:hover {
   background-color: rgb(70, 183, 253);
+  padding-top: 6%;
 }
 div :link {
   text-decoration: none;
@@ -83,6 +97,14 @@ div :link {
 
 .LandingList :nth-child(odd) {
   background-color: rgba(44, 206, 255, 0.322);
+}
+.LandingList :hover {
+  background-color: rgb(38, 216, 240);
+}
+
+.LandingList {
+  animation-name: fade-in;
+  animation-duration: 2s;
 }
 
 .Button:hover {
@@ -96,7 +118,35 @@ input {
   border-radius: 10px;
   margin-left: 10px;
 }
+@keyframes dots {
+  0% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  100% {
+    content: "...";
+  }
+}
 #loading {
   text-align: center;
   text-decoration: wavy;
+}
+#loading::after {
+  content: "";
+  animation-name: dots;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.search-in {
+  animation-name: fade-in;
+  animation-duration: 2s;
+}
+
+.NewsItem {
+  background-color: rgb(190, 233, 233);
+}
+.NewsItem :hover {
+  padding: 3%;
 }
