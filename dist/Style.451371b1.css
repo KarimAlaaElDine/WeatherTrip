@@ -146,9 +146,12 @@ input {
 
 .NewsItem {
   background-color: rgb(190, 233, 233);
+  padding: 3%;
+  margin-bottom: 2%;
+  align-items: center;
+  text-align: center;
 }
 .NewsItem :hover {
-  padding: 3%;
 }
 
 
